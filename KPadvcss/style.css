@@ -1,0 +1,221 @@
+/*
+
+1) CONTAINER QURIES
+
+<style>
+.changing-container {
+
+    container-type: inline-size;
+
+    span {
+        background: tomato ;
+    }
+    
+    border: 1px solid white;
+
+}
+
+
+/*@container (inline-size <= 500px)  the same */ 
+
+
+
+
+/*  EXAMPLE
+
+
+@container (width <= 500px){
+    .changing-container span{
+        background: teal ;
+    }
+}
+
+
+@container (width >= 922px){
+    .changing-container span{
+        background: grey ;
+    }
+}
+
+
+
+.sd {
+    container:  sd / inline-size; /*shorthand */
+    /* container-type: inline-size;
+    container-name: sd; 
+    border: 1px solid white;
+}
+
+@container sd (width <= 500px) {
+    .sd  {
+        p{
+            color:  tomato;
+        }
+    }
+}
+
+.changing-container {
+    
+& span {
+    background: tomato !important;
+ }   
+}
+</style>
+
+
+ HTML
+<div class="changing-container" style="max-width: 600px;">
+
+    <span>text</span>
+
+</div>
+
+<div class="changing-container ">
+
+    <span>text</span>
+
+</div>
+
+<div class="sd " style="max-width: 800px;"> <p>jkhkj</p></div>
+ HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CASCADE LAYERS
+
+
+/*now wo do not have speceficity issue */
+
+/*
+1 autor styles 
+2 user  styles 
+3 user-agent  styles 
+*/
+
+/*
+@layer a, b, c
+@layer layout {
+    ul li {
+        background: tomato ;
+        margin-block: 1rem;
+    }
+}
+.lt {
+    background: teal;
+}
+
+
+
+
+
+
+
+
+//OVERRIDE FRAMEWORK
+@import url("framework")layer(x)
+@layer x, a;
+
+@layer a {
+  h1{ color : red ; } the red will show ===> we are overriding default classes inside our framework
+}
+
+if we make a, x the default clr will be on the screen showed it should be e not a class
+
+import bs5 in html to be fast to download the css and bs5 in the same time
+//OVERRIDE FRAMEWORK
+
+
+
+
+
+
+ CASCADE LAYERS
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCOPE
+
+<h1 class="text">RUOK</h1>
+<div class="sp border border-light p-3">
+    <span class="text">WHITE</span>
+
+    <div class="aaa">
+        <span class="text">B2K</span>
+    </div>
+</div>
+
+
+
+@scope (.sp) to (.aaa) {
+    .text {
+        color : tomato ;
+    }
+}
+
+*/
+
+
+
+
+
+
+
+
+
+/*
+//user-valid & user-invalid
+
+the classes are forms
+
+.f :invalid {
+    border-color: red; => declare error before u interact with the input
+}
+
+.s :user-invalid {
+    border-color: red; => declare error after u interact with the input
+}
+//user-valid & user-invalid
+
+*/
+
+
+.btn {
+    color: red;
+}
